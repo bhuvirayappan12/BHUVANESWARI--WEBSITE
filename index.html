@@ -3,666 +3,284 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Bhuvana | My Creative Universe</title>
+<title>Buvii's Little Universe 💜</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-
-:root {
-    --text: #392447;
-    --accent: #9b4d96;
-    --card: rgba(255,255,255,0.55);
-    --border: rgba(255,255,255,0.7);
-}
-
-body {
-    font-family: 'Trebuchet MS', Arial, sans-serif;
-    color: var(--text);
-    background: linear-gradient(
-        -45deg, #fbc2eb, #a6c1ee, #d4c2fc, #f9d5e5
-    );
-    background-size: 400% 400%;
-    animation: gradientMove 14s ease infinite;
-    min-height: 100vh;
-    transition: background 0.4s, color 0.4s;
-    overflow-x: hidden;
-}
-
-@keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    padding: 18px 7%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
-    flex-wrap: wrap;
-    background: rgba(255,255,255,0.35);
-    backdrop-filter: blur(18px);
-    border-bottom: 1px solid var(--border);
-}
-
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: var(--accent);
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 17px;
-}
-
-nav a {
-    text-decoration: none;
-    color: var(--text);
-    font-size: 14px;
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: #d14e9e;
-}
-
-#themeButton {
-    border: none;
-    border-radius: 50%;
-    padding: 9px;
-    cursor: pointer;
-    font-size: 19px;
-    background: var(--card);
-}
-
-.hero {
-    min-height: 82vh;
-    padding: 80px 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    position: relative;
-}
-
-.badge {
-    padding: 11px 20px;
-    border-radius: 30px;
-    background: var(--card);
-    border: 1px solid var(--border);
-    margin-bottom: 28px;
-    animation: fadeIn 1.2s ease both;
-}
-
-.hero h1 {
-    font-size: clamp(38px, 8vw, 76px);
-    line-height: 1.2;
-    margin-bottom: 20px;
-    animation: fadeIn 1.4s ease both;
-}
-
-.gradient-text {
-    background: linear-gradient(90deg, #9347b0, #d54e9c, #7657d5);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-.typing-line {
-    min-height: 35px;
-    font-size: clamp(17px, 3vw, 23px);
-    margin-bottom: 20px;
-    font-weight: bold;
-}
-
-.hero p {
-    max-width: 650px;
-    font-size: 17px;
-    line-height: 1.9;
-    margin-bottom: 30px;
-}
-
-.button {
-    display: inline-block;
-    padding: 14px 25px;
-    background: linear-gradient(135deg, #a64d91, #7451a6);
-    color: white;
-    border: none;
-    text-decoration: none;
-    border-radius: 30px;
-    font-size: 15px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform .3s, box-shadow .3s;
-}
-
-.button:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 25px #794c8740;
-}
-
-section {
-    padding: 75px 7%;
-    text-align: center;
-}
-
-.section-title {
-    font-size: clamp(28px, 5vw, 39px);
-    margin-bottom: 14px;
-    color: var(--accent);
-}
-
-.section-subtitle {
-    line-height: 1.8;
-    margin-bottom: 35px;
-}
-
-.glass {
-    background: var(--card);
-    backdrop-filter: blur(18px);
-    border: 1px solid var(--border);
-    border-radius: 24px;
-    padding: 30px;
-    box-shadow: 0 12px 35px #55336612;
-}
-
-.about-card {
-    max-width: 780px;
-    margin: auto;
-    line-height: 2;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 22px;
-    max-width: 1100px;
-    margin: auto;
-}
-
-.card {
-    transition: transform .3s, box-shadow .3s;
-}
-
-.card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px #55336620;
-}
-
-.icon {
-    font-size: 40px;
-    margin-bottom: 16px;
-}
-
-.card h3 {
-    color: var(--accent);
-    margin-bottom: 13px;
-}
-
-.card p {
-    line-height: 1.8;
-}
-
-.motto {
-    max-width: 800px;
-    margin: auto;
-    font-size: clamp(20px, 4vw, 28px);
-    line-height: 1.8;
-    font-weight: bold;
-}
-
-.timeline {
-    max-width: 750px;
-    margin: auto;
-    text-align: left;
-}
-
-.timeline-item {
-    margin-bottom: 20px;
-    border-left: 4px solid #b45ca6;
-    border-radius: 0 18px 18px 0;
-}
-
-.timeline-item h3 {
-    margin-bottom: 10px;
-    color: var(--accent);
-}
-
-.timeline-item p {
-    line-height: 1.8;
-}
-
-.quiz-box {
-    max-width: 650px;
-    margin: auto;
-}
-
-.quiz-box h3 {
-    margin-bottom: 20px;
-}
-
-.quiz-options {
-    display: grid;
-    gap: 12px;
-}
-
-.quiz-options button {
-    padding: 13px;
-    border: 1px solid var(--border);
-    border-radius: 13px;
-    background: rgba(255,255,255,.6);
-    color: #392447;
-    font-size: 15px;
-    cursor: pointer;
-    transition: .2s;
-}
-
-.quiz-options button:hover {
-    background: #edc5e9;
-    transform: translateY(-2px);
-}
-
-#quizResult {
-    margin-top: 18px;
-    font-weight: bold;
-    line-height: 1.8;
-}
-
-#topButton {
-    position: fixed;
-    bottom: 22px;
-    right: 20px;
-    z-index: 99;
-    width: 45px;
-    height: 45px;
-    border: none;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #a64d91, #7451a6);
-    color: white;
-    font-size: 22px;
-    cursor: pointer;
-    display: none;
-    box-shadow: 0 5px 18px #55336635;
-}
-
-footer {
-    padding: 30px 15px;
-    text-align: center;
-    background: rgba(255,255,255,.3);
-    line-height: 2;
-}
-
-/* Floating decorative stars */
-
-.star {
-    position: fixed;
-    bottom: -30px;
-    pointer-events: none;
-    z-index: -1;
-    opacity: .65;
-    animation: floatUp linear forwards;
-}
-
-@keyframes floatUp {
-    from {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0;
-    }
-    15% { opacity: .65; }
-    to {
-        transform: translateY(-110vh) rotate(300deg);
-        opacity: 0;
-    }
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Dark mode */
-
-body.dark {
-    --text: #f4eaff;
-    --accent: #edb5f0;
-    --card: rgba(32,24,49,.72);
-    --border: rgba(255,255,255,.15);
-    background: linear-gradient(-45deg, #171426, #302044, #40244a, #211b38);
-    background-size: 400% 400%;
-}
-
-body.dark nav,
-body.dark footer {
-    background: rgba(20,15,35,.78);
-}
-
-body.dark nav a {
-    color: var(--text);
-}
-
-body.dark .quiz-options button {
-    background: #352643;
-    color: white;
-    border-color: #ffffff25;
-}
-
-@media (max-width: 600px) {
-    nav {
-        padding: 16px 5%;
-    }
-
-    .nav-links {
-        gap: 12px;
-    }
-
-    nav a {
-        font-size: 12px;
-    }
-
-    .hero {
-        min-height: 72vh;
-        padding: 60px 20px;
-    }
-
-    section {
-        padding: 55px 5%;
-    }
-
-    .glass {
-        padding: 23px;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-        scroll-behavior: auto !important;
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: .01ms !important;
-    }
-}
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--purple:#bd8cff;--pink:#ff9bd2;--muted:#c9bedc}
+body{font-family:'Segoe UI',sans-serif;background:#10091f;color:white;min-height:100vh;overflow-x:hidden}
+.glow{position:fixed;width:300px;height:300px;border-radius:50%;filter:blur(110px);opacity:.4;z-index:-1;pointer-events:none}
+.glow1{background:#9b5de5;top:-100px;left:-100px;animation:float 8s infinite alternate}
+.glow2{background:#f15bb5;bottom:-100px;right:-100px;animation:float 8s infinite alternate-reverse}
+@keyframes float{to{transform:translate(80px,60px)}}
+@keyframes appear{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+nav{display:flex;align-items:center;justify-content:space-between;padding:18px 5%;gap:12px;flex-wrap:wrap;border-bottom:1px solid #ffffff20;background:#10091fdd}
+.logo{color:var(--purple);font-size:22px;font-weight:bold}
+.navlinks{display:flex;flex-wrap:wrap;justify-content:center;gap:5px}
+.navlinks button{background:transparent;color:#eee3ff;border:none;padding:9px;cursor:pointer;font-size:13px}
+.navlinks button:hover{color:var(--pink)}
+.screen{display:none;min-height:76vh;padding:45px 20px;align-items:center;justify-content:center;text-align:center}
+.screen.active{display:flex;animation:appear .6s ease}
+.content{width:100%;max-width:850px}
+.tag{display:inline-block;color:#f0dfff;background:#bd8cff20;border:1px solid #bd8cff60;padding:9px 18px;border-radius:30px;margin-bottom:24px;font-size:13px}
+h1{font-size:clamp(38px,7vw,65px);margin-bottom:20px}
+h2{font-size:clamp(30px,5vw,45px);margin-bottom:25px}
+.gradient{background:linear-gradient(90deg,#bd8cff,#ff9bd2);color:transparent;background-clip:text;-webkit-background-clip:text}
+p{color:var(--muted);line-height:1.9}
+.intro{max-width:650px;margin:0 auto 25px;font-size:16px}
+.actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:28px}
+.btn{padding:13px 23px;border-radius:30px;border:1px solid #ffffff30;cursor:pointer;font-size:14px;transition:.3s}
+.primary{background:linear-gradient(90deg,#9b5de5,#f15bb5);color:white;border:none}
+.secondary{background:#ffffff0b;color:white}
+.btn:hover{transform:scale(1.05)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px;margin:25px 0;text-align:left}
+.card{background:#ffffff0b;border:1px solid #ffffff20;border-radius:20px;padding:24px;transition:.3s}
+.card:hover{transform:translateY(-5px);border-color:var(--purple)}
+.card .icon{font-size:30px;margin-bottom:12px}
+.card h3{color:#ead8ff;margin-bottom:10px}
+.quote{font-size:18px;font-style:italic;color:#f4d9ff;border-left:3px solid var(--pink);padding:18px;margin:22px auto;max-width:650px;background:#ffffff08;text-align:left;line-height:1.8}
+.skill{display:inline-block;margin:6px;padding:11px 15px;border-radius:12px;background:#bd8cff20;border:1px solid #bd8cff50;color:#f0ddff}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:15px;margin:25px 0}
+.gallery-item{min-height:140px;border:1px solid #ffffff25;border-radius:18px;background:#ffffff0c;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;cursor:pointer;padding:15px}
+.gallery-item span{font-size:40px}
+footer{border-top:1px solid #ffffff18;text-align:center;padding:20px;color:#a99dbb;font-size:13px}
+.viewer{display:none;position:fixed;inset:0;z-index:10;background:#080411ee;align-items:center;justify-content:center;padding:20px}
+.viewer.active{display:flex}
+.viewer-box{width:100%;max-width:500px;padding:30px;border-radius:22px;background:#211532;border:1px solid #bd8cff70;text-align:center}
+.chibi{position:relative;width:180px;height:220px;margin:10px auto 20px;animation:dance .7s ease-in-out infinite alternate}
+@keyframes dance{from{transform:rotate(-7deg) translateY(0)}to{transform:rotate(7deg) translateY(-10px)}}
+.face{position:absolute;width:115px;height:105px;top:35px;left:32px;border-radius:45% 45% 48% 48%;background:#ffe0d2;border:3px solid #b66cba;z-index:2}
+.hair{position:absolute;top:17px;left:25px;width:130px;height:75px;border-radius:60% 60% 30% 30%;background:#7546a6;color:#ffd6ff;text-align:center;padding-top:8px;font-size:23px;z-index:3}
+.ears{position:absolute;top:12px;left:70px;font-size:30px;color:#ff9bd2;z-index:4}
+.eyes{position:absolute;top:40px;width:100%;display:flex;justify-content:space-evenly;color:#51306d;font-size:17px}
+.blush{position:absolute;top:62px;width:100%;display:flex;justify-content:space-around;color:#ff85ad;font-size:13px}
+.mouth{position:absolute;top:65px;left:50%;transform:translateX(-50%);color:#a24c76;font-size:18px}
+.bodygirl{position:absolute;top:130px;left:52px;width:75px;height:65px;border-radius:25px 25px 15px 15px;background:linear-gradient(135deg,#c084fc,#ff9bd2);border:2px solid #f8d8ff;text-align:center;padding-top:12px;font-size:25px}
+.sparkle{position:absolute;color:#ffb8ef;font-size:25px;animation:twinkle 1s infinite alternate}
+.s1{top:35px;left:0}.s2{top:90px;right:0}.s3{top:145px;right:8px}
+@keyframes twinkle{to{opacity:.3;transform:scale(1.3) rotate(25deg)}}
+@media(max-width:600px){nav{justify-content:center}.logo{width:100%;text-align:center}.screen{padding:35px 16px}.card{padding:20px}}
 </style>
 </head>
 
 <body>
+<div class="glow glow1"></div>
+<div class="glow glow2"></div>
 
 <nav>
-    <div class="logo">Bhuvana ✨</div>
-
-    <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#journey">Journey</a>
-        <a href="#quiz">Quiz</a>
-        <button id="themeButton" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
-    </div>
+<div class="logo">✦ Buvii's Universe</div>
+<div class="navlinks">
+<button onclick="go('home')">Home</button>
+<button onclick="go('about')">About</button>
+<button onclick="go('skills')">Skills</button>
+<button onclick="go('interests')">Interests</button>
+<button onclick="go('dreams')">Dreams</button>
+<button onclick="go('awards')">Awards</button>
+<button onclick="go('gallery')">Gallery</button>
+<button onclick="go('thoughts')">Thoughts</button>
+<button onclick="go('contact')">Contact</button>
+</div>
 </nav>
 
-<header class="hero" id="home">
-    <div class="badge">🌷 WELCOME TO MY LITTLE UNIVERSE 🌷</div>
-
-    <h1>Hello, I'm <span class="gradient-text">Bhuvana</span> 💜</h1>
-
-    <div class="typing-line">
-        <span id="typingText"></span><span aria-hidden="true">|</span>
-    </div>
-
-    <p>
-        A curious mind, a creative soul, and a lifelong learner.
-        I believe every day is a new opportunity to discover
-        something meaningful and become a better version of myself.
-    </p>
-
-    <a href="#about" class="button">Explore My World ✨</a>
-</header>
-
-<section id="about">
-    <h2 class="section-title">A Little About Me 🌸</h2>
-    <p class="section-subtitle">Every person has a story. Here is a little part of mine.</p>
-
-    <div class="glass about-card">
-        <h3>My Story 💜</h3>
-        <br>
-        <p>
-            Hi! I'm Bhuvana. I enjoy exploring new ideas,
-            discovering technology, and learning skills that
-            can help me grow personally and professionally.
-        </p>
-        <br>
-        <p>
-            I believe that success doesn't happen in one day.
-            It grows through curiosity, consistency, patience,
-            and the courage to try something new.
-        </p>
-    </div>
+<!-- WELCOME SCREEN -->
+<section class="screen active" id="home">
+<div class="content">
+<div class="tag">✨ A LITTLE WORLD OF MAGIC ✨</div>
+<div class="chibi">
+<div class="ears">♡</div>
+<div class="hair">✦</div>
+<div class="face">
+<div class="eyes"><span>●</span><span>●</span></div>
+<div class="blush"><span>♥</span><span>♥</span></div>
+<div class="mouth">ᴗ</div>
+</div>
+<div class="bodygirl">🎀</div>
+<div class="sparkle s1">✦</div>
+<div class="sparkle s2">✧</div>
+<div class="sparkle s3">♡</div>
+</div>
+<h1>Welcome to<br><span class="gradient">Buvii's World!</span></h1>
+<p class="intro">A tiny universe filled with dreams, creativity and a little magic. 💜</p>
+<div class="actions">
+<button class="btn primary" onclick="go('intro')">Enter My World ♡ →</button>
+</div>
+</div>
 </section>
 
-<section id="skills">
-    <h2 class="section-title">My Interests & Skills 💡</h2>
-    <p class="section-subtitle">Things I'm exploring on my learning journey.</p>
-
-    <div class="grid">
-        <div class="glass card">
-            <div class="icon">💻</div>
-            <h3>Technology</h3>
-            <p>Exploring websites, digital tools, and new technology.</p>
-        </div>
-
-        <div class="glass card">
-            <div class="icon">🎨</div>
-            <h3>Creativity</h3>
-            <p>Enjoying creative ideas, design, and making things from scratch.</p>
-        </div>
-
-        <div class="glass card">
-            <div class="icon">📚</div>
-            <h3>Learning</h3>
-            <p>Building knowledge one small step at a time.</p>
-        </div>
-
-        <div class="glass card">
-            <div class="icon">🗣️</div>
-            <h3>Communication</h3>
-            <p>Practising clear communication and expressing ideas with confidence.</p>
-        </div>
-    </div>
+<!-- INTRO SCREEN -->
+<section class="screen" id="intro">
+<div class="content">
+<div class="avatar" style="font-size:75px;margin:auto auto 25px">🌸</div>
+<div class="tag">NICE TO MEET YOU ✨</div>
+<h1>Hi, I'm <span class="gradient">Buvii!</span> 💜</h1>
+<p class="intro">A dreamer with a curious mind, a creative soul and a heart full of possibilities. Welcome to my little corner of the internet!</p>
+<div class="quote">"Your story is still being written. Make the next chapter beautiful."</div>
+<div class="actions">
+<button class="btn secondary" onclick="go('home')">← Back</button>
+<button class="btn primary" onclick="go('about')">Discover My World →</button>
+</div>
+</div>
+</section>
+<!-- ABOUT ME -->
+<section class="screen" id="about">
+<div class="content">
+<div class="tag">🌷 A LITTLE SPACE ABOUT ME</div>
+<h2>Get to Know <span class="gradient">Me</span></h2>
+<p class="intro">Hi! I'm Buvii. I'm a creative person who believes life is a journey of learning, growing and discovering who we truly are.</p>
+<div class="grid">
+<div class="card"><div class="icon">🌸</div><h3>My Personality</h3><p>I value creativity, independence and the courage to try new things.</p></div>
+<div class="card"><div class="icon">📚</div><h3>My Mindset</h3><p>I want to keep learning, improve my abilities and become more confident.</p></div>
+<div class="card"><div class="icon">💫</div><h3>My Journey</h3><p>I'm discovering my strengths and creating a future that makes me proud.</p></div>
+</div>
+<div class="quote">"I don't need to have everything figured out. I just need the courage to take the next step."</div>
+<div class="actions"><button class="btn secondary" onclick="go('intro')">← Back</button><button class="btn primary" onclick="go('skills')">My Skills →</button></div>
+</div>
 </section>
 
-<section id="journey">
-    <h2 class="section-title">My Journey 🌱</h2>
-    <p class="section-subtitle">A journey of learning, growing, and discovering.</p>
-
-    <div class="timeline">
-        <div class="glass timeline-item">
-            <h3>🎓 My Education</h3>
-            <p>
-                B.E. in Electronics and Communication Engineering.
-                My education introduced me to engineering and technology.
-            </p>
-        </div>
-
-        <div class="glass timeline-item">
-            <h3>💻 Exploring New Skills</h3>
-            <p>
-                Learning digital skills and exploring how websites
-                are designed and built.
-            </p>
-        </div>
-
-        <div class="glass timeline-item">
-            <h3>🚀 My Next Chapter</h3>
-            <p>
-                My goal is to keep learning, build my confidence,
-                and develop a meaningful career.
-            </p>
-        </div>
-    </div>
+<!-- SKILLS -->
+<section class="screen" id="skills">
+<div class="content">
+<div class="tag">💻 MY GROWTH JOURNEY</div>
+<h2>My <span class="gradient">Skills</span></h2>
+<p class="intro">Skills grow through practice, curiosity and consistency.</p>
+<div class="card">
+<h3>💻 Technical Skills</h3>
+<span class="skill">C Programming — Basics</span>
+<span class="skill">Java — Basics</span>
+<span class="skill">MS Excel</span>
+<span class="skill">Computer Skills</span>
+</div>
+<div class="card" style="margin-top:18px">
+<h3>🌟 Personal Skills</h3>
+<span class="skill">Communication</span>
+<span class="skill">Creative Thinking</span>
+<span class="skill">Adaptability</span>
+<span class="skill">Curiosity</span>
+<span class="skill">Continuous Learning</span>
+</div>
+<div class="actions"><button class="btn secondary" onclick="go('about')">← About</button><button class="btn primary" onclick="go('interests')">Interests →</button></div>
+</div>
 </section>
 
-<section id="motto">
-    <h2 class="section-title">A Thought I Believe In 💭</h2>
-
-    <div class="glass motto">
-        "You don't need to know everything today.
-        You just need to be willing to learn something new." 🌷
-    </div>
+<!-- INTERESTS -->
+<section class="screen" id="interests">
+<div class="content">
+<div class="tag">🎀 THINGS THAT MAKE ME HAPPY</div>
+<h2>My <span class="gradient">Interests</span></h2>
+<div class="grid">
+<div class="card"><div class="icon">🎧</div><h3>Music</h3><p>Music makes ordinary moments special.</p></div>
+<div class="card"><div class="icon">📚</div><h3>Books</h3><p>Books open doors to new ideas and imagination.</p></div>
+<div class="card"><div class="icon">📸</div><h3>Photography</h3><p>Capturing little moments and beautiful memories.</p></div>
+<div class="card"><div class="icon">🌍</div><h3>Travelling</h3><p>Discovering new places and experiences.</p></div>
+</div>
+<div class="actions"><button class="btn secondary" onclick="go('skills')">← Skills</button><button class="btn primary" onclick="go('dreams')">Dreams →</button></div>
+</div>
 </section>
 
-<section id="quiz">
-    <h2 class="section-title">A Little Mini Quiz 🎮</h2>
-    <p class="section-subtitle">Let's celebrate curiosity and learning!</p>
-
-    <div class="glass quiz-box">
-        <h3>Which mindset helps us learn new skills?</h3>
-
-        <div class="quiz-options">
-            <button onclick="checkAnswer(this, false)">A. Giving up when it's difficult</button>
-            <button onclick="checkAnswer(this, true)">B. Practising and learning step by step</button>
-            <button onclick="checkAnswer(this, false)">C. Never trying anything new</button>
-        </div>
-
-        <p id="quizResult" aria-live="polite"></p>
-    </div>
+<!-- DREAMS -->
+<section class="screen" id="dreams">
+<div class="content">
+<div class="tag">🚀 MY FUTURE, MY JOURNEY</div>
+<h2>Dream <span class="gradient">Big</span></h2>
+<div class="grid">
+<div class="card"><div class="icon">🌱</div><h3>Keep Growing</h3><p>Learn new things and become more confident.</p></div>
+<div class="card"><div class="icon">💼</div><h3>Build My Career</h3><p>Build a meaningful career and become financially independent.</p></div>
+<div class="card"><div class="icon">🌟</div><h3>Make a Difference</h3><p>Make my family proud and live a purposeful life.</p></div>
+</div>
+<div class="quote">"Small steps every day can lead to extraordinary places."</div>
+<div class="actions"><button class="btn secondary" onclick="go('interests')">← Interests</button><button class="btn primary" onclick="go('awards')">Awards →</button></div>
+</div>
 </section>
 
-<section id="contact">
-    <h2 class="section-title">Thank You for Visiting 💌</h2>
-
-    <div class="glass about-card">
-        <p>
-            This is my little corner of the internet,
-            created with curiosity, creativity, and a desire to learn.
-        </p>
-        <br>
-        <p>Keep learning. Keep growing. Keep being you. 💜</p>
-        <br>
-        <a href="#home" class="button">Back to My World ↑</a>
-    </div>
+<!-- AWARDS -->
+<section class="screen" id="awards">
+<div class="content">
+<div class="tag">🏆 MILESTONES & MEMORIES</div>
+<h2>Awards & <span class="gradient">Achievements</span></h2>
+<p class="intro">This space is for celebrating my education, certificates and special milestones.</p>
+<div class="grid">
+<div class="card"><div class="icon">🎓</div><h3>Education</h3><p>My academic journey and educational milestones.</p></div>
+<div class="card"><div class="icon">📜</div><h3>Certificates</h3><p>A place for my course certificates and workshops.</p></div>
+<div class="card"><div class="icon">🌟</div><h3>Personal Growth</h3><p>Every small step forward is worth celebrating.</p></div>
+</div>
+<div class="actions"><button class="btn secondary" onclick="go('dreams')">← Dreams</button><button class="btn primary" onclick="go('gallery')">Gallery →</button></div>
+</div>
 </section>
 
-<footer>
-    <p>Made with 💜 and creativity by Bhuvana.</p>
-    <p>Every little step matters. ✨</p>
-</footer>
+<!-- GALLERY -->
+<section class="screen" id="gallery">
+<div class="content">
+<div class="tag">📸 MY LITTLE COLLECTION</div>
+<h2>My <span class="gradient">Gallery</span></h2>
+<p class="intro">Click a card to open its message. These are decorative cards, not real photographs.</p>
+<div class="gallery">
+<div class="gallery-item" onclick="openViewer('🎧','Music Moments','Music for every mood.')"><span>🎧</span><p>Music Moments</p></div>
+<div class="gallery-item" onclick="openViewer('📚','Book Corner','Every book opens a new world.')"><span>📚</span><p>Book Corner</p></div>
+<div class="gallery-item" onclick="openViewer('📸','Photography','Little moments, lasting memories.')"><span>📸</span><p>Photography</p></div>
+<div class="gallery-item" onclick="openViewer('🌍','Travel Dreams','New places, new perspectives.')"><span>🌍</span><p>Travel Dreams</p></div>
+<div class="gallery-item" onclick="openViewer('🌷','Beautiful Moments','Finding beauty in little things.')"><span>🌷</span><p>Beautiful Moments</p></div>
+<div class="gallery-item" onclick="openViewer('✨','My Universe','A little space for my dreams.')"><span>✨</span><p>My Universe</p></div>
+</div>
+<div class="actions"><button class="btn secondary" onclick="go('awards')">← Awards</button><button class="btn primary" onclick="go('thoughts')">Thoughts →</button></div>
+</div>
+</section>
 
-<button id="topButton" onclick="goToTop()" aria-label="Back to top">↑</button>
+<!-- THOUGHTS -->
+<section class="screen" id="thoughts">
+<div class="content">
+<div class="tag">💭 A FEW WORDS TO REMEMBER</div>
+<h2>My <span class="gradient">Thoughts</span></h2>
+<div class="quote">"Be patient with yourself. Growth takes time."</div>
+<div class="quote">"Your value is not decided by someone else's opinion."</div>
+<div class="quote">"You don't have to be the best. Just keep becoming better."</div>
+<div class="quote">"Create a life that feels meaningful to you."</div>
+<div class="actions"><button class="btn secondary" onclick="go('gallery')">← Gallery</button><button class="btn primary" onclick="go('contact')">Contact →</button></div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section class="screen" id="contact">
+<div class="content">
+<div class="tag">💌 THANK YOU FOR VISITING</div>
+<h2>Stay Curious. <span class="gradient">Keep Growing.</span></h2>
+<p class="intro">Thank you for spending a little time in my universe. Every new day is another page in your story. 💜</p>
+<div class="actions"><button class="btn secondary" onclick="go('thoughts')">← Thoughts</button><button class="btn primary" onclick="go('home')">Back to Home ↻</button></div>
+</div>
+</section>
+
+<!-- GALLERY VIEWER -->
+<div class="viewer" id="viewer" onclick="closeViewer()">
+<div class="viewer-box" onclick="event.stopPropagation()">
+<div id="viewerIcon" style="font-size:55px">✨</div>
+<h3 id="viewerTitle"></h3>
+<p id="viewerText"></p>
+<button class="btn primary" onclick="closeViewer()">Close ✕</button>
+</div>
+</div>
+
+<footer>Made with 💜 by Buvii</footer>
 
 <script>
-/* Typing animation */
-
-const phrases = [
-    "A Lifelong Learner 🌱",
-    "A Creative Thinker ✨",
-    "Always Exploring 💡",
-    "Building My Future 🚀"
-];
-
-let phraseIndex = 0;
-let characterIndex = 0;
-let deleting = false;
-
-function typeEffect() {
-    const element = document.getElementById("typingText");
-    const currentPhrase = phrases[phraseIndex];
-
-    if (!deleting) {
-        element.textContent = currentPhrase.substring(0, characterIndex + 1);
-        characterIndex++;
-
-        if (characterIndex === currentPhrase.length) {
-            deleting = true;
-            setTimeout(typeEffect, 1200);
-            return;
-        }
-    } else {
-        element.textContent = currentPhrase.substring(0, characterIndex - 1);
-        characterIndex--;
-
-        if (characterIndex === 0) {
-            deleting = false;
-            phraseIndex = (phraseIndex + 1) % phrases.length;
-        }
-    }
-
-    setTimeout(typeEffect, deleting ? 45 : 85);
-}
-
-typeEffect();
-
-/* Dark / light mode */
-
-function toggleTheme() {
-    document.body.classList.toggle("dark");
-
-    const button = document.getElementById("themeButton");
-
-    button.textContent =
-        document.body.classList.contains("dark") ? "☀️" : "🌙";
-}
-
-/* Floating stars */
-
-const starSymbols = ["✦", "✧", "⋆", "✨"];
-
-function createStar() {
-    const star = document.createElement("span");
-
-    star.className = "star";
-    star.textContent = starSymbols[
-        Math.floor(Math.random() * starSymbols.length)
-    ];
-
-    star.style.left = Math.random() * 100 + "vw";
-    star.style.fontSize = (12 + Math.random() * 16) + "px";
-    star.style.animationDuration = (8 + Math.random() * 8) + "s";
-
-    document.body.appendChild(star);
-
-    setTimeout(() => star.remove(), 16000);
-}
-
-setInterval(createStar, 1200);
-
-/* Mini quiz */
-
-function checkAnswer(button, isCorrect) {
-    const result = document.getElementById("quizResult");
-
-    if (isCorrect) {
-        result.textContent = "Correct! 🎉 Consistent practice helps us grow!";
-    } else {
-        result.textContent = "Not quite! 🌱 Try the option about practising and learning.";
-    }
-}
-
-/* Back-to-top button */
-
-const topButton = document.getElementById("topButton");
-
-window.addEventListener("scroll", function () {
-    topButton.style.display = window.scrollY > 350 ? "block" : "none";
-});
-
-function goToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
+function go(screenId) {
+    document.querySelectorAll('.screen').forEach(function(screen) {
+        screen.classList.remove('active');
     });
+    const target = document.getElementById(screenId);
+    if (target) {
+        target.classList.add('active');
+    }
+    window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function openViewer(icon, title, message) {
+    document.getElementById('viewerIcon').textContent = icon;
+    document.getElementById('viewerTitle').textContent = title;
+    document.getElementById('viewerText').textContent = message;
+    document.getElementById('viewer').classList.add('active');
+}
+
+function closeViewer() {
+    document.getElementById('viewer').classList.remove('active');
 }
 </script>
 

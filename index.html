@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #ffe1f0, #e6ddff);
+            color: #493454;
+        }
+
+        .card {
+            background: white;
+            max-width: 450px;
+            margin: 40px auto;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px #00000020;
+        }
+
+        h1 {
+            color: #8b3d82;
+        }
+
+        h2 {
+            color: #a64d91;
+        }
+
+        button {
+            background: #a64d91;
+            color: white;
+            border: none;
+            padding: 13px 22px;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #details {
+            display: none;
+            text-align: left;
+            line-height: 1.8;
+            margin-top: 20px;
+        }
+
+        footer {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Welcome to My World! 🌸</h1>
+    <p>A little space about me and my dreams.</p>
+
+    <div class="card">
+
+        <h2>Hi, I'm Shalini ❤️</h2>
+
+        <p>Welcome to my personal website!</p>
+
+        <button onclick="showDetails()">
+            Know More About Me ✨
+        </button>
+
+        <div id="details">
+            <h2>About Me 🌷</h2>
+
+            <p><b>Name:</b> Shalini</p>
+
+            <p><b>Education:</b> B.E. Electronics and Communication Engineering</p>
+
+            <p><b>My Goal:</b> To learn new skills and build my career.</p>
+
+            <p><b>My Interests:</b> Technology, creativity and self-improvement.</p>
+
+            <p><b>My Motto:</b> Learn something new every day! 🌱</p>
+
+            <p>Every day is a new opportunity to grow and learn. 💜</p>
+        </div>
+
+    </div>
+
+    <footer>
+        Made with ❤️ by Shalini
+    </footer>
+
+    <script>
+        function showDetails() {
+            document.getElementById("details").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
